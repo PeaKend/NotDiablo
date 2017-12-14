@@ -20,11 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4541589882753368}
   - component: {fileID: 212528532530290584}
-  - component: {fileID: 114851244708655484}
   - component: {fileID: 61879111882167756}
   - component: {fileID: 50113038149159206}
+  - component: {fileID: 114999048848430968}
+  - component: {fileID: 114178630177331844}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Ranged Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +89,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.85526806, y: 0.76842874}
   m_EdgeRadius: 0
---- !u!114 &114851244708655484
+--- !u!114 &114178630177331844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1717451462892774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1f7ed6d6894354e9deeae4fb9fca12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1302637344104896, guid: 82c5f917edb29694883dfcce60527d34, type: 2}
+--- !u!114 &114999048848430968
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -99,8 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84fc6408a382b146bcdeb72b72a621a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aim: {fileID: 0}
-  projectile: {fileID: 1302637344104896, guid: 82c5f917edb29694883dfcce60527d34, type: 2}
+  aimPrefab: {fileID: 1090535987124742, guid: 699e2820eb9046549842d3a56588da6f, type: 2}
 --- !u!212 &212528532530290584
 SpriteRenderer:
   m_ObjectHideFlags: 1
