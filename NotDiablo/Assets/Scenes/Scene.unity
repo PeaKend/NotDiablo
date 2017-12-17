@@ -149,7 +149,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4269815760057752, guid: d1812d638d79ad54487fd0a15162d058, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1697519404251586, guid: d1812d638d79ad54487fd0a15162d058, type: 2}
       propertyPath: m_Name
@@ -283,7 +283,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4269815760057752, guid: d1812d638d79ad54487fd0a15162d058, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4269815760057752, guid: d1812d638d79ad54487fd0a15162d058, type: 2}
       propertyPath: m_LocalScale.x
@@ -297,8 +297,6 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: d1812d638d79ad54487fd0a15162d058, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1050638286
-<<<<<<< HEAD
-=======
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -353,7 +351,6 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: d1812d638d79ad54487fd0a15162d058, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1298634520
->>>>>>> Classes
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -474,7 +471,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4269815760057752, guid: d1812d638d79ad54487fd0a15162d058, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1697519404251586, guid: d1812d638d79ad54487fd0a15162d058, type: 2}
       propertyPath: m_Name
