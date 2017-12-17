@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void moveCharacter() {
-		body.AddForce(Vector2.up*Input.GetAxisRaw("Vertical")*movementSpeed);
-		body.AddForce(Vector2.right*Input.GetAxisRaw("Horizontal")*movementSpeed);
+		body.AddForce( Vector2.up * Input.GetAxisRaw("Vertical") * movementSpeed);
+		body.AddForce( Vector2.right * Input.GetAxisRaw("Horizontal") * movementSpeed);
 	}
 }
