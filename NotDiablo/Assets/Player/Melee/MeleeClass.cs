@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class MeleeClass : MonoBehaviour {
 
-	// Use this for initialization
 	public GameObject attack;
 	int attackCooldown = 60, attackCurrentCooldown = 0;
-	void Start () {
-	}
 	
-	// Update is called once per frame
+	// Damage vars
+	
+
 	void Update () {
 		if(attackCurrentCooldown > 0) attackCurrentCooldown--;
 		if(attackCurrentCooldown == 0 && Input.GetButton("Fire1"))
