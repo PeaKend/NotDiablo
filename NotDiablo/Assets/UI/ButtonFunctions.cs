@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour {
 
-	// Use this for initialization
 	public GameObject mainPanel;
 	public GameObject optionsPanel;
 	public GameObject classPanel;
@@ -15,7 +14,6 @@ public class ButtonFunctions : MonoBehaviour {
 		classPanel.SetActive(false);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	}
 	public void StartGame()
@@ -42,15 +40,15 @@ public class ButtonFunctions : MonoBehaviour {
 		SceneManager.LoadScene("Scene");
 		Scene s = SceneManager.GetSceneByName("Scene");
 		GameObject player = Instantiate(meleePlayer, Vector3.zero, Quaternion.identity);
-		SceneManager.MoveGameObjectToScene(player, s);
-		//SceneManager.SetActiveScene(s);
+		// SceneManager.MoveGameObjectToScene(player, s);
+		// SceneManager.SetActiveScene(s);
 	}
 	public void ChooseRanged()
 	{
 		SceneManager.LoadScene("Scene");
 		Scene s = SceneManager.GetSceneByName("Scene");
 		GameObject player = Instantiate(rangedPlayer, Vector3.zero, Quaternion.identity);
-		//SceneManager.MoveGameObjectToScene(player, s);
-		//SceneManager.SetActiveScene(s);
+		// SceneManager.MoveGameObjectToScene(player, s);
+		// SceneManager.SetActiveScene(s);
 	}
 }
