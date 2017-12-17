@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour {
 	float movementSpeed = 100;
 	public GameObject aimPrefab; GameObject aim;
 	Vector3 cameraOffset;
+
+	void Awake() {
+		DontDestroyOnLoad(gameObject);	
+	}
 	void Start () {
 		body = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
@@ -20,10 +24,28 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		body.velocity = Vector2.zero;
-		body.AddForce(Vector2.up*Input.GetAxisRaw("Vertical")*movementSpeed);
-		body.AddForce(Vector2.right*Input.GetAxisRaw("Horizontal")*movementSpeed);
+		if ( playerisMoving() )
+		{
+			moveCharacter();
+		}
 		Camera.main.transform.position = transform.position + cameraOffset;
 		Vector2 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		aim.transform.position = new Vector3(point.x, point.y, aim.transform.position.z);
+	}
+
+	bool playerisMoving() {
+		if ( (Mathf.Abs(Input.GetAxis("Horizontal")) > 0) || (Mathf.Abs(Input.GetAxis("Vertical")) > 0) )
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	void moveCharacter() {
+		body.AddForce(Vector2.up*Input.GetAxisRaw("Vertical")*movementSpeed);
+		body.AddForce(Vector2.right*Input.GetAxisRaw("Horizontal")*movementSpeed);
 	}
 }
