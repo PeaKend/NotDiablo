@@ -4,21 +4,42 @@ using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour {
 
-	// Use this for initialization
+
 	int duration = 30;
-	void Start () {
-		
+	int damage;
+
+	void Awake() {
+		// prevents bugs #FIXME
+		updatesDamageValue();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void Update () 
+	{
+		// updates damage value each frame (this is horrible, it should be modified to update when neccesary)
+		updatesDamageValue();
+
 		if(duration > 0) duration--;
 		else Destroy(gameObject);
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		Debug.Log(col.tag);
-		if(col.tag != "Player") Destroy(col.gameObject);
+		if ( col.gameObject.tag == "Enemy" ) 
+		{
+			// if enemy found attack him
+			attackEnemy(col.gameObject);
+			// debug
+			Debug.Log( "Enemy hit: " + damage + " hp lost" );
+		}
+	}
+
+	void updatesDamageValue() 
+	{
+		damage = GameObject.FindGameObjectWithTag("Player").GetComponent<MeleeClass>().MeleeDamage;
+	}
+
+	void attackEnemy( GameObject enemyObject ) 
+	{
+		enemyObject.GetComponent<Enemy>().loseHp(damage);
 	}
 }
