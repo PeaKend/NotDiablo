@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-	// Use this for initialization
 	Rigidbody2D body; Animator anim;
 	float movementSpeed = 100;
 	public GameObject aimPrefab; GameObject aim;
 	Vector3 cameraOffset;
 
 	void Awake() {
-		DontDestroyOnLoad(gameObject);	
+		DontDestroyOnLoad(gameObject);
 	}
 	void Start () {
 		body = GetComponent<Rigidbody2D>();
@@ -19,12 +18,12 @@ public class PlayerMovement : MonoBehaviour {
 		cameraOffset = Camera.main.transform.position - transform.position;
 		Cursor.visible = false;
 		aim = Instantiate(aimPrefab, transform.position, Quaternion.identity);
+		DontDestroyOnLoad(aim);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		body.velocity = Vector2.zero;
-		if ( playerisMoving() )
+		if ( playerIsMoving() )
 		{
 			moveCharacter();
 		}
@@ -33,15 +32,8 @@ public class PlayerMovement : MonoBehaviour {
 		aim.transform.position = new Vector3(point.x, point.y, aim.transform.position.z);
 	}
 
-	bool playerisMoving() {
-		if ( (Mathf.Abs(Input.GetAxis("Horizontal")) > 0) || (Mathf.Abs(Input.GetAxis("Vertical")) > 0) )
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+	bool playerIsMoving() {
+		return Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0;
 	}
 
 	void moveCharacter() {
