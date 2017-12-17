@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
 		cameraOffset = Camera.main.transform.position - transform.position;
 		Cursor.visible = false;
 		aim = Instantiate(aimPrefab, transform.position, Quaternion.identity);
+		DontDestroyOnLoad(aim);
 	}
 	
 	// Update is called once per frame
